@@ -100,10 +100,8 @@ _{String} 默认为'center'_
 'left-top' 左上 'top-center' 上中 'right-top' 右上 'right-center' 右中 'right-bottom' 右下 'bottom-center' 下中 'left-bottom' 左下 'left-center' 左中 'center' 居中
 
 - **animation**
-
-_{Object || Boolean || Function } 默认为 { popUp: { duration: 300, easing: 'ease-in'}, shade: { duration: 300, easing: 'ease-in' } }_
-
-false时为不采用动画; 若为Object时, 比较popUp或shade，popUp或shade为Function时，在弹窗时回调该函数，并分别传入参数$popUp对象和$shade对象；若popUp与shade也为对象时，popUp和shade的参数与Zepto的animate方法的参数一致，参考 http://zeptojs.com/#animate
+ _{Object || Boolean || Function } 默认为 { popUp: { duration: 300, easing: 'ease-in'}, shade: { duration: 300, easing: 'ease-in' } }_
+ false时为不采用动画; 若为Object时, 比较popUp或shade，popUp或shade为Function时，在弹窗时回调该函数，并分别传入参数$popUp对象和$shade对象；若popUp与shade也为对象时，popUp和shade的参数与Zepto的animate方法的参数一致，参考 http://zeptojs.com/#animate
 
     - **duration**
 
@@ -127,22 +125,18 @@ false时为不采用动画; 若为Object时, 比较popUp或shade，popUp或shade
 
 - **isScrollMove**
 
-__{Boolean} 默认false 是否禁用掉scroll，在弹出的时候__
+_{Boolean} 默认false 是否禁用掉scroll，在弹出的时候_
 
 - **tmpl**
-
 _{Object || String} 默认{close: true, title: 'test title', body: 'it works'} 如果是字符串，则直接作为弹窗内容，如果是对象_
 
     - **close**
-
     _{Boolean} 默认为true 显示关闭按钮_
 
     - **title**
-
     _{String || Boolean} 默认为'test title' 弹窗标题_
 
     - **body**
-
     _{String || Boolean} 默认为'it works' 弹窗内容_
 
 - **zIndex**
