@@ -94,9 +94,7 @@ A mini zepto popup plugin focuses on mobile/webkit browsers. Sure, you can call 
 
 ###options
 - **position**
-
 _{String} 默认为'center'_
-
 'left-top' 左上 'top-center' 上中 'right-top' 右上 'right-center' 右中 'right-bottom' 右下 'bottom-center' 下中 'left-bottom' 左下 'left-center' 左中 'center' 居中
 
 - **animation**
@@ -104,27 +102,20 @@ _{String} 默认为'center'_
  false时为不采用动画; 若为Object时, 比较popUp或shade，popUp或shade为Function时，在弹窗时回调该函数，并分别传入参数$popUp对象和$shade对象；若popUp与shade也为对象时，popUp和shade的参数与Zepto的animate方法的参数一致，参考 http://zeptojs.com/#animate
 
     - **duration**
-
     _{String || Number} 默认400，动画持续时间_
-
     'fast'为200ms，'slow'为 600ms
 
     - **easing**
-
     _{String} 默认'linear'，动画缓动效果_
-
     'ease' 'linear' 'ease-in' 'ease-out' 'ease-in-out' 'cubic-bezier(...)'</li>
 
     - **complete**
-
-    - _{Function} 默认undefined 动画完成回调函数_
+    _{Function} 默认undefined 动画完成回调函数_
 
     - **aniProperties**
-
     _{Object} 默认为 { popUp: { opacity: .8 }, shade: { opacity: .8 } } 分别定义弹窗popUp与shade遮罩层在动画时的目标样式_
 
 - **isScrollMove**
-
 _{Boolean} 默认false 是否禁用掉scroll，在弹出的时候_
 
 - **tmpl**
@@ -140,17 +131,13 @@ _{Object || String} 默认{close: true, title: 'test title', body: 'it works'} �
     _{String || Boolean} 默认为'it works' 弹窗内容_
 
 - **zIndex**
-
 _{Number} 默认为2 设置弹窗z-index 最小为2_
 
 - **autoPop**
-
 _{Boolean} 默认为false 是否自动打开_
 
 - **shade**
-
 _{Boolean} 默认为true 显示遮罩层_
 
 - **destory**
-
 _{Boolean || Function} 默认为false 弹窗消失时的回调函数，参数为$popUp与$shade_
