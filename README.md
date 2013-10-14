@@ -51,7 +51,7 @@ false时为不采用动画; 若为Object时, 比较popUp或shade，popUp或shade
 
     + **complete**
 
-    + __{Function} 默认undefined 动画完成回调函数__ 
+    + __{Function} 默认undefined 动画完成回调函数__
 
     + **aniProperties**
 
