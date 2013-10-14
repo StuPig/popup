@@ -107,7 +107,7 @@ _{String} 默认为'center'_
 
     - **easing**
     _{String} 默认'linear'，动画缓动效果_
-    'ease' 'linear' 'ease-in' 'ease-out' 'ease-in-out' 'cubic-bezier(...)'</li>
+    'ease' 'linear' 'ease-in' 'ease-out' 'ease-in-out' 'cubic-bezier(...)'
 
     - **complete**
     _{Function} 默认undefined 动画完成回调函数_
