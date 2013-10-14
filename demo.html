@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PopUp</title>
+    <meta name="description" content="每天团购一次，精品消费指南">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no"  />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name="full-screen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="address=no"/>
+</head>
+<body>
+    <h3>弹窗插件, 或者组件, 支持良好的自定义，亦可简单上手</h3>
+    <h5>特性:</h5>
+    <ol>
+        <li>自定义弹窗位置（左上 中上 右上 居中 左下 左中等9个位置）</li>
+        <li>支持自定义动画</li>
+        <li>支持模板</li>
+        <li>小巧，150多行代码</li>
+    </ol>
+    <i>专为webkit高级手机浏览器设计, but尚未做兼容性测试……</i>
+    <hr />
+    <select id="pops">
+        <option selected="selected" value="0">基本弹窗</option>
+        <option value="1">自定义动画属性</option>
+        <option value="2">自定义弹窗内容0</option>
+        <option value="3">自定义弹窗内容1</option>
+        <option value="4">自定义动画函数</option>
+    </select>
+    <button>点击PopUp</button>
+<script src="zepto.js"></script>
+<script src="zepto.popup.js"></script>
+<script id="pop4" type="text/x-style">
+/** 自定义动画的样式 **/
+    .pop-wrapper {
+        opacity: 1;
+        display: -webkit-box;
+        z-index: -1;
+        -webkit-box-align: end;
+    }
+    .pop-content {
+        -webkit-transition: all 300ms ease-in;
+        -webkit-transform: translateY(110%);
+    }
+</script>
+<script>
+var $pop;
+
+var demos = {
+    /*------------
+      简单使用
+     ------------*/
+    pop0: function() {
+        $pop = $.popUp();
+    },
+
+    /*------------
+      自定义动画属性
+     ------------*/
+    pop1: function() {
+        $pop = $.popUp({
+
+            // 自定义弹窗的背景色
+            aniProperties: {
+                popUp: {
+                    background: 'red'
+                }
+            }
+        });
+    },
+
+    /*------------
+      自定义弹窗内容0
+     ------------*/
+    pop2: function() {
+        $pop = $.popUp({
+           tmpl: {
+               close: false,
+               title: 'oh~ nobody nobody but title'
+           }
+        });
+    },
+
+    /*------------
+      自定义弹窗内容1
+     ------------*/
+    pop3: function() {
+        $pop = $.popUp({
+            shade: false,   // 不显示遮罩层
+            position: 'left-center',    // 位置为“左中”
+            tmpl: 'hahahaha <h1>shit</h1> ugly'
+        });
+    },
+
+    /*------------
+      自定义动画函数
+     ------------*/
+    pop4: function() {
+        $pop = $.popUp({
+            autoPop: true,  // 自动打开
+            position: 'bottom-center',  // 位置为“下中”
+            // 自定义动画函数
+            animation: {
+                popUp: function($popUp) {
+                    var $popContent = $popUp.find('.pop-content');
+                    $popUp.css({'z-index': 2});
+
+                    setTimeout(function() {
+                        // $popContent.css('bottom', 0)
+                        $popContent.css('-webkit-transform', 'translateY(0)')
+                    }, 0);
+
+                },
+                shade: function($shade) {
+                    $shade.css({display: 'block', 'opacity': .8});
+                }
+            },
+            // 自定义弹窗消失方法
+            destory: function($popUp) {
+                $popUp.find('.pop-content').attr('style', '');
+            }
+        });
+    }
+}
+
+$(function() {
+    var $style4;
+
+    $('#pops').on('change', function(e) {
+        $pop && $pop.remove();
+
+        var val = $(this).val() || 0;
+
+        if (val == 4) {
+           $style4 = $('<style >' + $('#pop4').html() + '<\/style>').appendTo($('body'));
+        } else {
+            $style4 && $style4.remove();
+        }
+
+        demos['pop' + val]();
+    }).trigger('change');
+
+    $('button').on('click', function(e) {
+
+        if ($pop && $pop.length) {
+            $pop.pop();
+        } else {
+            alert('shit, tell the poor man~')
+        }
+    })
+});
+
+</script>
+</body>
+</html>
