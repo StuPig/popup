@@ -136,7 +136,7 @@ false时为不采用动画; 若为Object时, 比较popUp或shade，popUp或shade
     <li>__ {Object} 默认为 { popUp: { opacity: .8 }, shade: { opacity: .8 } } 分别定义弹窗popUp与shade遮罩层在动画时的目标样式__</li>
 </ul>
 
-**isScrollMove**
+- **isScrollMove**
 
 __{Boolean} 默认false 是否禁用掉scroll，在弹出的时候__
 
