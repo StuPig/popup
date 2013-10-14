@@ -95,46 +95,35 @@ A mini zepto popup plugin focuses on mobile/webkit browsers. Sure, you can call 
 ###options
 - **position**
 
-__{String} 默认为'center'__
+_{String} 默认为'center'_
 
 'left-top' 左上 'top-center' 上中 'right-top' 右上 'right-center' 右中 'right-bottom' 右下 'bottom-center' 下中 'left-bottom' 左下 'left-center' 左中 'center' 居中
 
 - **animation**
 
- __{Object || Boolean || Function } 默认为 { popUp: { duration: 300, easing: 'ease-in'}, shade: { duration: 300, easing: 'ease-in' } } __
+_{Object || Boolean || Function } 默认为 { popUp: { duration: 300, easing: 'ease-in'}, shade: { duration: 300, easing: 'ease-in' } }_
 
 false时为不采用动画; 若为Object时, 比较popUp或shade，popUp或shade为Function时，在弹窗时回调该函数，并分别传入参数$popUp对象和$shade对象；若popUp与shade也为对象时，popUp和shade的参数与Zepto的animate方法的参数一致，参考 http://zeptojs.com/#animate
 
-<ul>
-    <li>**duration**</li>
+    - **duration**
 
+    _{String || Number} 默认400，动画持续时间_
 
-    <li>__{String || Number} 默认400，动画持续时间__</li>
+    'fast'为200ms，'slow'为 600ms
 
+    - **easing**
 
-    <li>'fast'为200ms，'slow'为 600ms</li>
+    _{String} 默认'linear'，动画缓动效果_
 
+    'ease' 'linear' 'ease-in' 'ease-out' 'ease-in-out' 'cubic-bezier(...)'</li>
 
-    <li>**easing**</li>
+    - **complete**
 
+    - _{Function} 默认undefined 动画完成回调函数_
 
-    <li>__{String} 默认'linear'，动画缓动效果__</li>
+    - **aniProperties**
 
-
-    <li>'ease' 'linear' 'ease-in' 'ease-out' 'ease-in-out' 'cubic-bezier(...)'</li>
-
-
-    <li>**complete**</li>
-
-
-    <li>__{Function} 默认undefined 动画完成回调函数__</li>
-
-
-    <li>**aniProperties**</li>
-
-
-    <li>__ {Object} 默认为 { popUp: { opacity: .8 }, shade: { opacity: .8 } } 分别定义弹窗popUp与shade遮罩层在动画时的目标样式__</li>
-</ul>
+    _{Object} 默认为 { popUp: { opacity: .8 }, shade: { opacity: .8 } } 分别定义弹窗popUp与shade遮罩层在动画时的目标样式_
 
 - **isScrollMove**
 
@@ -142,32 +131,32 @@ __{Boolean} 默认false 是否禁用掉scroll，在弹出的时候__
 
 - **tmpl**
 
- __{Object || String} 默认{close: true, title: 'test title', body: 'it works'} 如果是字符串，则直接作为弹窗内容，如果是对象__
+_{Object || String} 默认{close: true, title: 'test title', body: 'it works'} 如果是字符串，则直接作为弹窗内容，如果是对象_
 
     - **close**
 
-    __{Boolean} 默认为true 显示关闭按钮__
+    _{Boolean} 默认为true 显示关闭按钮_
 
     - **title**
 
-    __ {String || Boolean} 默认为'test title' 弹窗标题__
+    _{String || Boolean} 默认为'test title' 弹窗标题_
 
     - **body**
 
-    __{String || Boolean} 默认为'it works' 弹窗内容__
+    _{String || Boolean} 默认为'it works' 弹窗内容_
 
 - **zIndex**
 
-__ {Number} 默认为2 设置弹窗z-index 最小为2__
+_{Number} 默认为2 设置弹窗z-index 最小为2_
 
 - **autoPop**
 
-__{Boolean} 默认为false 是否自动打开__
+_{Boolean} 默认为false 是否自动打开_
 
 - **shade**
 
-__{Boolean} 默认为true 显示遮罩层__
+_{Boolean} 默认为true 显示遮罩层_
 
 - **destory**
 
-__{Boolean || Function} 默认为false 弹窗消失时的回调函数，参数为$popUp与$shade__
+_{Boolean || Function} 默认为false 弹窗消失时的回调函数，参数为$popUp与$shade_
