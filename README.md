@@ -37,36 +37,37 @@ __{String} 默认为'center'__
  __{Object || Boolean || Function } 默认为 { popUp: { duration: 300, easing: 'ease-in'}, shade: { duration: 300, easing: 'ease-in' } } __
 
 false时为不采用动画; 若为Object时, 比较popUp或shade，popUp或shade为Function时，在弹窗时回调该函数，并分别传入参数$popUp对象和$shade对象；若popUp与shade也为对象时，popUp和shade的参数与Zepto的animate方法的参数一致，参考 http://zeptojs.com/#animate
-    <ol>
-        <li>**duration**</li>
+
+<ol>
+    <li>**duration**</li>
 
 
-        <li>__{String || Number} 默认400，动画持续时间__</li>
+    <li>__{String || Number} 默认400，动画持续时间__</li>
 
 
-        <li>'fast'为200ms，'slow'为 600ms</li>
+    <li>'fast'为200ms，'slow'为 600ms</li>
 
 
-        <li>**easing**</li>
+    <li>**easing**</li>
 
 
-        <li>__{String} 默认'linear'，动画缓动效果__</li>
+    <li>__{String} 默认'linear'，动画缓动效果__</li>
 
 
-        <li>'ease' 'linear' 'ease-in' 'ease-out' 'ease-in-out' 'cubic-bezier(...)'</li>
+    <li>'ease' 'linear' 'ease-in' 'ease-out' 'ease-in-out' 'cubic-bezier(...)'</li>
 
 
-        <li>**complete**</li>
+    <li>**complete**</li>
 
 
-        <li>__{Function} 默认undefined 动画完成回调函数__</li>
+    <li>__{Function} 默认undefined 动画完成回调函数__</li>
 
 
-        <li>**aniProperties**</li>
+    <li>**aniProperties**</li>
 
 
-        <li>__ {Object} 默认为 { popUp: { opacity: .8 }, shade: { opacity: .8 } } 分别定义弹窗popUp与shade遮罩层在动画时的目标样式__</li>
-    </ol>
+    <li>__ {Object} 默认为 { popUp: { opacity: .8 }, shade: { opacity: .8 } } 分别定义弹窗popUp与shade遮罩层在动画时的目标样式__</li>
+</ol>
 
 **isScrollMove**
 
