@@ -24,8 +24,75 @@ A mini zepto popup plugin focuses on mobile/webkit browsers. Sure, you can call 
 ```javascript
     $.popUp({opts})
 ```
+###example
+```javascript
+      /*-----------
+       * 简单使用
+       -----------*/
+       var $pop = $.popUp();
 
-####options
+       /*------------
+        * 自定义动画属性
+        ------------*/
+       var $pop = $.popUp({
+
+           // 自定义弹窗的背景色
+           aniProperties: {
+               popUp: {
+                   background: 'red'
+               }
+           }
+       });
+
+       /*------------
+        * 自定义弹窗内容0
+        ------------*/
+        var $pop = $.popUp({
+           tmpl: {
+               close: false,
+               title: 'oh~ nobody nobody but title'
+           }
+        });
+
+       /*------------
+        * 自定义弹窗内容1
+        ------------*/
+       var $pop = $.popUp({
+           shade: false,   // 不显示遮罩层
+           position: 'left-center',    // 位置为“左中”
+           tmpl: 'hahahaha <h1>shit</h1> ugly'
+       });
+
+       /*------------
+        * 自定义动画函数
+        ------------*/
+       var $pop = $.popUp({
+           autoPop: true,  // 自动打开
+           position: 'bottom-center',  // 位置为“下中”
+           // 自定义动画函数
+           animation: {
+               popUp: function($popUp) {
+                   var $popContent = $popUp.find('.pop-content');
+                   $popUp.css({'z-index': 2});
+
+                   setTimeout(function() {
+                       // $popContent.css('bottom', 0)
+                       $popContent.css('-webkit-transform', 'translateY(0)')
+                   }, 0);
+
+               },
+               shade: function($shade) {
+                   $shade.css({display: 'block', 'opacity': .8});
+               }
+           },
+           // 自定义弹窗消失方法
+           destory: function($popUp) {
+               $popUp.find('.pop-content').attr('style', '');
+           }
+       });
+```
+
+###options
 - **position**
 
 __{String} 默认为'center'__
@@ -38,7 +105,7 @@ __{String} 默认为'center'__
 
 false时为不采用动画; 若为Object时, 比较popUp或shade，popUp或shade为Function时，在弹窗时回调该函数，并分别传入参数$popUp对象和$shade对象；若popUp与shade也为对象时，popUp和shade的参数与Zepto的animate方法的参数一致，参考 http://zeptojs.com/#animate
 
-<ol>
+<ul>
     <li>**duration**</li>
 
 
@@ -67,7 +134,7 @@ false时为不采用动画; 若为Object时, 比较popUp或shade，popUp或shade
 
 
     <li>__ {Object} 默认为 { popUp: { opacity: .8 }, shade: { opacity: .8 } } 分别定义弹窗popUp与shade遮罩层在动画时的目标样式__</li>
-</ol>
+</ul>
 
 **isScrollMove**
 
